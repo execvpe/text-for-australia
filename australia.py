@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-rotated = {
+substitutions = {
     'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p',
     'e': 'ǝ', 'f': 'ɟ', 'g': 'ᵷ', 'h': 'ɥ',
     'i': 'ᴉ', 'j': 'ſ̣', 'k': 'ʞ', 'l': 'ꞁ',
@@ -27,7 +27,7 @@ rotated = {
 
 def main() -> None:
     string = input()
-    rot = "".join(list(map(lambda c: rotated.get(c, c), string)))
+    rot = "".join(list(map(lambda c: substitutions.get(c, c), string)))
     print(rot[::-1])
 
 if __name__ == "__main__":
