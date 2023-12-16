@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-substitutions = {
+substitutions = str.maketrans({
               '1': '𐌋', '2': '↊', '3': '↋',
     '4': 'Һ',           '6': '9', '7': '∠',
               '9': '6',
@@ -27,12 +27,10 @@ substitutions = {
 
     ",": "'", ".": "˙", "(": ")", ")": "(",
     "'": ",", "?": "¿", "!": "¡",
-}
+})
 
 def main() -> None:
-    string = input()
-    rot = "".join(list(map(lambda c: substitutions.get(c, c), string)))
-    print(rot[::-1])
+    print(input().translate(substitutions)[::-1])
 
 if __name__ == "__main__":
     main()
